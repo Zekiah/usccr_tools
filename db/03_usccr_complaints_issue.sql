@@ -1,0 +1,1076 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.1.2
+-- Dumped by pg_dump version 9.1.2
+-- Started on 2017-02-06 07:38:58
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 245 (class 1259 OID 117892)
+-- Dependencies: 5
+-- Name: usccr_complaints_issue; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE usccr_complaints_issue (
+    id integer NOT NULL,
+    state character varying(100),
+    state_abbr character varying(10),
+    total integer,
+    aj integer,
+    ed integer,
+    e integer,
+    fp integer,
+    hac integer,
+    hec integer,
+    h integer,
+    hr integer,
+    nj integer,
+    o integer,
+    pb integer,
+    pm integer,
+    pc integer,
+    pr integer,
+    pa integer,
+    unk integer,
+    vr integer,
+    month integer,
+    year integer
+);
+
+
+ALTER TABLE public.usccr_complaints_issue OWNER TO postgres;
+
+--
+-- TOC entry 244 (class 1259 OID 117890)
+-- Dependencies: 245 5
+-- Name: usccr_complaints_issue_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE usccr_complaints_issue_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.usccr_complaints_issue_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3251 (class 0 OID 0)
+-- Dependencies: 244
+-- Name: usccr_complaints_issue_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE usccr_complaints_issue_id_seq OWNED BY usccr_complaints_issue.id;
+
+
+--
+-- TOC entry 3252 (class 0 OID 0)
+-- Dependencies: 244
+-- Name: usccr_complaints_issue_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('usccr_complaints_issue_id_seq', 1007, true);
+
+
+--
+-- TOC entry 3245 (class 2604 OID 117895)
+-- Dependencies: 245 244 245
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE usccr_complaints_issue ALTER COLUMN id SET DEFAULT nextval('usccr_complaints_issue_id_seq'::regclass);
+
+
+--
+-- TOC entry 3248 (class 0 OID 117892)
+-- Dependencies: 245
+-- Data for Name: usccr_complaints_issue; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO usccr_complaints_issue VALUES (1, 'Alabama', 'AL', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (2, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (3, 'Arizona', 'AZ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (4, 'Arkansas', 'AR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (5, 'California', 'CA', 11, 0, 0, 0, 0, 0, 0, 0, 0, 2, 9, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (6, 'Colorado', 'CO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (7, 'Connecticut', 'CT', 3, 1, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (8, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (9, 'Disrict Of Columbia', 'DC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (10, 'Florida', 'FL', 10, 1, 0, 0, 0, 0, 0, 0, 0, 4, 1, 1, 0, 0, 3, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (11, 'Georgia', 'GA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (12, 'Hawaii', 'HI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (13, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (14, 'Illnois', 'IL', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (15, 'Indiana', 'IN', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (16, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (17, 'Kansas', 'KS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (18, 'Kentucky', 'KY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (19, 'Louisana', 'LA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (20, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (21, 'Maryland', 'MD', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (22, 'Massachusetts', 'MA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (23, 'Michigan', 'MI', 6, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4, 0, 1, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (24, 'Minnesota', 'MN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (25, 'Mississippi', 'MS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (26, 'Missouri', 'MO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (27, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (28, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (29, 'Nevada', 'NV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (30, 'New Hampshire', 'NH', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (32, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (33, 'New York', 'NY', 12, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7, 1, 0, 1, 1, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (34, 'North Carolina', 'NC', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (35, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (36, 'Ohio', 'OH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (37, 'Okalahma', 'OK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (38, 'Oregon', 'OR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (39, 'Pennsylvania', 'PA', 6, 1, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (40, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (41, 'South Carolina', 'SC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (42, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (43, 'Tennessee', 'TN', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (44, 'Texas', 'TX', 11, 0, 0, 0, 0, 0, 0, 0, 0, 5, 4, 0, 0, 0, 1, 0, 1, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (45, 'Utah', 'UT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (46, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (47, 'Virginia', 'VA', 6, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (48, 'Washington', 'WA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (49, 'West Virginia', 'WV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (50, 'Wisconson', 'WI', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (51, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (53, 'No State', 'NS', 6, 2, 0, 1, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (54, 'Alabama', 'AL', 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (55, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (56, 'Arizona', 'AZ', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (57, 'Arkansas', 'AR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (58, 'California', 'CA', 24, 1, 0, 0, 4, 0, 0, 1, 0, 5, 1, 0, 1, 0, 3, 0, 0, 8, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (59, 'Colorado', 'CO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (60, 'Connecticut', 'CT', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (61, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (62, 'Disrict Of Columbia', 'DC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (63, 'Florida', 'FL', 5, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 2, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (64, 'Georgia', 'GA', 4, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (31, 'New Jersey', 'NJ', 6, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 1, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (65, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (66, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (67, 'Illnois', 'IL', 2, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (68, 'Indiana', 'IN', 5, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 2, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (69, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (70, 'Kansas', 'KS', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (71, 'Kentucky', 'KY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (72, 'Louisana', 'LA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 1, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (73, 'Maine', 'ME', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (74, 'Maryland', 'MD', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (75, 'Massachusetts', 'MA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (76, 'Michigan', 'MI', 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (77, 'Minnesota', 'MN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (78, 'Mississippi', 'MS', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (79, 'Missouri', 'MO', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (80, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (81, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (82, 'Nevada', 'NV', 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (83, 'New Hampshire', 'NH', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (85, 'New Mexico', 'NM', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (86, 'New York', 'NY', 17, 1, 0, 1, 0, 0, 0, 0, 0, 3, 6, 1, 1, 0, 2, 0, 0, 2, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (87, 'North Carolina', 'NC', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (88, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (89, 'Ohio', 'OH', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (90, 'Oklahoma', 'OK', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (91, 'Oregon', 'OR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (92, 'Pennsylvania', 'PA', 10, 1, 0, 0, 1, 0, 0, 0, 0, 2, 3, 0, 0, 0, 1, 0, 0, 2, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (93, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (94, 'South Carolina', 'SC', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (95, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (96, 'Tennessee', 'TN', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (97, 'Texas', 'TX', 11, 1, 0, 0, 1, 0, 0, 0, 0, 2, 2, 0, 1, 0, 2, 0, 0, 2, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (98, 'Utah', 'UT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (99, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (100, 'Virginia', 'VA', 6, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 1, 0, 1, 0, 0, 1, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (101, 'West Virginia', 'WV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (102, 'Wisconson', 'WI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (103, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (104, 'Outside USA', 'XX', 7, 0, 0, 0, 1, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (105, 'No State', 'NS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (106, 'Washington', 'WA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (52, 'Outside USA', 'XX', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2015);
+INSERT INTO usccr_complaints_issue VALUES (84, 'New Jersey', 'NJ', 10, 2, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 3, 2, 2015);
+INSERT INTO usccr_complaints_issue VALUES (107, 'Alabama', 'AL', 6, 1, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 1, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (108, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (109, 'Arizona', 'AZ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (110, 'Arkansas', 'AR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (111, 'California', 'CA', 17, 0, 0, 0, 0, 0, 0, 0, 0, 2, 10, 1, 0, 0, 3, 0, 1, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (112, 'Colorado', 'CO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (113, 'Connecticut', 'CT', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (114, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (115, 'Disrict Of Columbia', 'DC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (116, 'Florida', 'FL', 10, 1, 0, 1, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (117, 'Georgia', 'GA', 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (118, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (119, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (120, 'Illnois', 'IL', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (121, 'Indiana', 'IN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (122, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (123, 'Kansas', 'KS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (124, 'Kentucky', 'KY', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (125, 'Louisana', 'LA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (126, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (127, 'Maryland', 'MD', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (128, 'Massachusetts', 'MA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (129, 'Michigan', 'MI', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (130, 'Minnesota', 'MN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (131, 'Mississippi', 'MS', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (132, 'Missouri', 'MO', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (133, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (134, 'Nebraska', 'NE', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (135, 'Nevada', 'NV', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (136, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (137, 'New Jersey', 'NJ', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (138, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (139, 'New York', 'NY', 20, 0, 0, 0, 0, 0, 0, 0, 0, 3, 14, 1, 0, 0, 2, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (140, 'North Carolina', 'NC', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (141, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (142, 'Ohio', 'OH', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (143, 'Oklahoma', 'OK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (144, 'Oregon', 'OR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (145, 'Pennsylvania', 'PA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 1, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (146, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (147, 'South Carolina', 'SC', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (148, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (149, 'Tennessee', 'TN', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (150, 'Texas', 'TX', 5, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 1, 0, 1, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (151, 'Utah', 'UT', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (152, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (153, 'Virginia', 'VA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (154, 'Washington', 'WA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (155, 'West Virginia', 'WV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (156, 'Wisconson', 'WI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (157, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (158, 'Outside USA', 'XX', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (159, 'No State', 'NS', 8, 0, 0, 0, 1, 0, 0, 0, 0, 2, 3, 0, 0, 0, 0, 0, 2, 0, 3, 2015);
+INSERT INTO usccr_complaints_issue VALUES (209, 'Wisconson', 'WI', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (210, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (160, 'Alabama', 'AL', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (161, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (162, 'Arizona', 'AZ', 5, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 2, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (211, 'Outside USA', 'XX', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (212, 'No State', 'NS', 13, 0, 0, 2, 0, 0, 0, 1, 0, 7, 1, 0, 0, 0, 0, 0, 2, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (195, 'Ohio', 'OH', 7, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 4, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (163, 'Arkansas', 'AR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (164, 'California', 'CA', 19, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 1, 0, 0, 1, 0, 7, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (165, 'Colorado', 'CO', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (166, 'Connecticut', 'CT', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (167, 'Delaware', 'DE', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (168, 'Disrict Of Columbia', 'DC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (169, 'Florida', 'FL', 15, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 1, 0, 8, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (170, 'Georgia', 'GA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (171, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (172, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (173, 'Illnois', 'IL', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (174, 'Indiana', 'IN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (175, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (176, 'Kansas', 'KS', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (177, 'Kentucky', 'KY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (178, 'Louisana', 'LA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (179, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (180, 'Maryland', 'MD', 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (181, 'Massachusetts', 'MA', 3, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (182, 'Michigan', 'MI', 5, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (183, 'Minnesota', 'MN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (184, 'Mississippi', 'MS', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (185, 'Missouri', 'MO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (186, 'Montana', 'MT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (187, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (188, 'Nevada', 'NV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (189, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (190, 'New Jersey', 'NJ', 6, 0, 0, 0, 0, 1, 0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (196, 'Oklahoma', 'OK', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (197, 'Oregon', 'OR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (198, 'Pennsylvania', 'PA', 17, 1, 0, 0, 0, 0, 0, 0, 0, 2, 11, 0, 0, 0, 1, 0, 2, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (199, 'Rhode Island ', 'RI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (200, 'South Carolina', 'SC', 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 1, 0, 0, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (201, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (202, 'Tennessee', 'TN', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (203, 'Texas', 'TX', 13, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 1, 0, 1, 0, 0, 5, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (204, 'Utah', 'UT', 3, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (205, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (206, 'Virginia', 'VA', 5, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 2, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (191, 'New Mexico', 'NM', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (207, 'Washington', 'WA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (208, 'West Virginia', 'WV', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (192, 'New York', 'NY', 17, 0, 0, 0, 0, 0, 0, 0, 0, 6, 7, 0, 3, 0, 1, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (193, 'North Carolina', 'NC', 9, 2, 0, 0, 1, 0, 1, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 1, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (194, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2015);
+INSERT INTO usccr_complaints_issue VALUES (213, 'Alabama', 'AL', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (214, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (215, 'Arizona', 'AZ', 7, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 2, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (216, 'Arkansas', 'AR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (217, 'California', 'CA', 22, 0, 0, 0, 1, 0, 0, 0, 0, 6, 11, 0, 0, 0, 3, 0, 1, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (218, 'Colorado', 'CO', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (219, 'Connecticut', 'CT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (220, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (221, 'Disrict Of Columbia', 'DC', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (222, 'Florida', 'FL', 16, 0, 0, 0, 0, 0, 0, 0, 0, 3, 11, 1, 0, 0, 1, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (223, 'Georgia', 'GA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (224, 'Hawaii', 'HI', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (225, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (226, 'Illnois', 'IL', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (227, 'Indiana', 'IN', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (228, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (229, 'Kansas', 'KS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (230, 'Kentucky', 'KY', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (231, 'Louisana', 'LA', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (232, 'Maine', 'ME', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (233, 'Maryland', 'MD', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (234, 'Massachusetts', 'MA', 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (235, 'Michigan', 'MI', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (236, 'Minnesota', 'MN', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (237, 'Mississippi', 'MS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (238, 'Missouri', 'MO', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (239, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (240, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (241, 'Nevada', 'NV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (242, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (243, 'New Jersey', 'NJ', 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (244, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (245, 'New York', 'NY', 27, 0, 0, 0, 0, 0, 0, 0, 0, 5, 14, 1, 2, 3, 2, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (246, 'North Carolina', 'NC', 7, 1, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 1, 0, 0, 1, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (247, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (248, 'Ohio', 'OH', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (249, 'Oklahoma', 'OK', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (250, 'Oregon', 'OR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (251, 'Pennsylvania', 'PA', 12, 0, 0, 0, 0, 0, 0, 0, 0, 2, 8, 0, 0, 0, 2, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (252, 'Rhode Island ', 'RI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (253, 'South Carolina', 'SC', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (254, 'South Dakota', 'SD', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (255, 'Tennessee', 'TN', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (256, 'Texas', 'TX', 14, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 1, 1, 2, 3, 1, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (257, 'Utah', 'UT', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (258, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (259, 'Virginia', 'VA', 6, 0, 0, 1, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (260, 'Washington', 'WA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (261, 'West Virginia', 'WV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (262, 'Wisconson', 'WI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (263, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (264, 'Outside USA', 'XX', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (265, 'No State', 'NS', 5, 0, 2, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2015);
+INSERT INTO usccr_complaints_issue VALUES (266, 'Alabama', 'AL', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (267, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (268, 'Arizona', 'AZ', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (269, 'Arkansas', 'AR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (270, 'California', 'CA', 6, 0, 0, 0, 0, 0, 0, 0, 0, 4, 1, 0, 0, 0, 1, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (271, 'Colorado', 'CO', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (272, 'Connecticut', 'CT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (273, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (274, 'Disrict Of Columbia', 'DC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (275, 'Florida', 'FL', 7, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 1, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (276, 'Georgia', 'GA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (277, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (278, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (279, 'Illnois', 'IL', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (280, 'Indiana', 'IN', 3, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (281, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (282, 'Kansas', 'KS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (283, 'Kentucky', 'KY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (284, 'Louisana', 'LA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (285, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (286, 'Maryland', 'MD', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (287, 'Massachusetts', 'MA', 3, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (288, 'Michigan', 'MI', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (289, 'Minnesota', 'MN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (290, 'Mississippi', 'MS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (291, 'Missouri', 'MO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (292, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (293, 'Nebraska', 'NE', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (294, 'Nevada', 'NV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (295, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (296, 'New Jersey', 'NJ', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (297, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (298, 'New York', 'NY', 10, 1, 0, 0, 0, 0, 0, 0, 0, 2, 4, 2, 1, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (299, 'North Carolina', 'NC', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (300, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (301, 'Ohio', 'OH', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 1, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (302, 'Oklahoma', 'OK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (303, 'Oregon', 'OR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (304, 'Pennsylvania', 'PA', 8, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 1, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (305, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (306, 'South Carolina', 'SC', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (307, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (308, 'Tennessee', 'TN', 4, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (309, 'Texas', 'TX', 7, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 1, 1, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (310, 'Utah', 'UT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (311, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (312, 'Virginia', 'VA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (313, 'Washington', 'WA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (314, 'West Virginia', 'WV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (315, 'Wisconson', 'WI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (316, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (317, 'Outside USA', 'XX', 4, 0, 0, 1, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (318, 'No State', 'NS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2015);
+INSERT INTO usccr_complaints_issue VALUES (319, 'Alabama', 'AL', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (320, 'Alaska', 'AK', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (321, 'Arizona', 'AZ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (322, 'Arkansas', 'AR', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (323, 'California', 'CA', 13, 0, 0, 0, 0, 1, 0, 0, 0, 2, 5, 1, 0, 0, 3, 0, 1, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (324, 'Colorado', 'CO', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (325, 'Connecticut', 'CT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (326, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (327, 'Disrict Of Columbia', 'DC', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (328, 'Florida', 'FL', 9, 0, 1, 0, 1, 0, 0, 0, 0, 1, 4, 0, 0, 0, 2, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (329, 'Georgia', 'GA', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (330, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (331, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (332, 'Illnois', 'IL', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (333, 'Indiana', 'IN', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (334, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (335, 'Kansas', 'KS', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (336, 'Kentucky', 'KY', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (337, 'Louisana', 'LA', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (338, 'Maine', 'ME', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (339, 'Maryland', 'MD', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (340, 'Massachusetts', 'MA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (341, 'Michigan', 'MI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (342, 'Minnesota', 'MN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (343, 'Mississippi', 'MS', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (344, 'Missouri', 'MO', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (345, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (346, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (347, 'Nevada', 'NV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (348, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (349, 'New Jersey', 'NJ', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (350, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (351, 'New York', 'NY', 21, 0, 0, 0, 0, 0, 0, 0, 0, 4, 14, 1, 0, 0, 1, 0, 1, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (352, 'North Carolina', 'NC', 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (353, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (354, 'Ohio', 'OH', 6, 0, 0, 1, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (355, 'Oklahoma', 'OK', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (356, 'Oregon', 'OR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (357, 'Pennsylvania', 'PA', 8, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (358, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (359, 'South Carolina', 'SC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (360, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (361, 'Tennessee', 'TN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (362, 'Texas', 'TX', 9, 0, 0, 0, 1, 0, 0, 0, 0, 4, 2, 0, 0, 0, 2, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (363, 'Utah', 'UT', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (364, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (365, 'Virginia', 'VA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 1, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (366, 'Washington', 'WA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (367, 'West Virginia', 'WV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (368, 'Wisconson', 'WI', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (369, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (370, 'Outside USA', 'XX', 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (371, 'No State', 'NS', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 7, 2015);
+INSERT INTO usccr_complaints_issue VALUES (372, 'Alabama', 'AL', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (373, 'Alaska', 'AK', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (374, 'Arizona', 'AZ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (375, 'Arkansas', 'AR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (376, 'California', 'CA', 17, 0, 0, 0, 0, 0, 0, 0, 0, 6, 5, 0, 2, 0, 4, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (377, 'Colorado', 'CO', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (378, 'Connecticut', 'CT', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (379, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (380, 'Disrict Of Columbia', 'DC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (381, 'Florida', 'FL', 11, 0, 0, 1, 0, 0, 0, 0, 0, 1, 8, 0, 0, 0, 1, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (382, 'Georgia', 'GA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (383, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (384, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (385, 'Illnois', 'IL', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (386, 'Indiana', 'IN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (387, 'Iowa', 'IA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (388, 'Kansas', 'KS', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (389, 'Kentucky', 'KY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (390, 'Louisana', 'LA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (391, 'Maine', 'ME', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (392, 'Maryland', 'MD', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (393, 'Massachusetts', 'MA', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (394, 'Michigan', 'MI', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (395, 'Minnesota', 'MN', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (396, 'Mississippi', 'MS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (397, 'Missouri', 'MO', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (398, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (399, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (400, 'Nevada', 'NV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (401, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (402, 'New Jersey', 'NJ', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (403, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (404, 'New York', 'NY', 19, 0, 0, 0, 0, 0, 0, 0, 0, 3, 12, 2, 0, 1, 1, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (405, 'North Carolina', 'NC', 10, 3, 0, 0, 0, 0, 0, 0, 0, 4, 2, 1, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (406, 'North Dakota', 'ND', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (407, 'Ohio', 'OH', 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (408, 'Oklahoma', 'OK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (409, 'Oregon', 'OR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (410, 'Pennsylvania', 'PA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (411, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (412, 'South Carolina', 'SC', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (413, 'South Dakota', 'SD', 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (414, 'Tennessee', 'TN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (415, 'Texas', 'TX', 18, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 1, 1, 0, 2, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (416, 'Utah', 'UT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (417, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (418, 'Virginia', 'VA', 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 1, 1, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (419, 'Washington', 'WA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (420, 'West Virginia', 'WV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (421, 'Wisconson', 'WI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (422, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (423, 'Outside USA', 'XX', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (424, 'No State', 'NS', 11, 1, 1, 1, 1, 0, 0, 0, 0, 4, 2, 0, 0, 0, 0, 0, 1, 0, 8, 2015);
+INSERT INTO usccr_complaints_issue VALUES (425, 'Alabama', 'AL', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (426, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (427, 'Arizona', 'AZ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (428, 'Arkansas', 'AR', 2, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (429, 'California', 'CA', 11, 0, 0, 0, 0, 0, 0, 0, 0, 8, 1, 0, 0, 1, 1, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (430, 'Colorado', 'CO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (431, 'Connecticut', 'CT', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (432, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (433, 'Disrict Of Columbia', 'DC', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (434, 'Florida', 'FL', 10, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6, 0, 1, 0, 1, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (435, 'Georgia', 'GA', 6, 1, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (436, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (437, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (438, 'Illnois', 'IL', 5, 1, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (439, 'Indiana', 'IN', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (440, 'Iowa', 'IA', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (441, 'Kansas', 'KS', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (442, 'Kentucky', 'KY', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (443, 'Louisana', 'LA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (444, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (445, 'Maryland', 'MD', 2, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (446, 'Massachusetts', 'MA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 1, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (447, 'Michigan', 'MI', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (448, 'Minnesota', 'MN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (449, 'Mississippi', 'MS', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (450, 'Missouri', 'MO', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (451, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (452, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (453, 'Nevada', 'NV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (454, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (455, 'New Jersey', 'NJ', 4, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (456, 'New Mexico', 'NM', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (457, 'New York', 'NY', 21, 0, 0, 1, 0, 0, 0, 0, 0, 1, 14, 0, 1, 0, 4, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (458, 'North Carolina', 'NC', 8, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 4, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (459, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (460, 'Ohio', 'OH', 9, 0, 0, 0, 0, 0, 1, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (461, 'Oklahoma', 'OK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (462, 'Oregon', 'OR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (463, 'Pennsylvania', 'PA', 6, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0, 1, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (464, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (465, 'South Carolina', 'SC', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (466, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (467, 'Tennessee', 'TN', 3, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (468, 'Texas', 'TX', 28, 0, 0, 0, 0, 0, 0, 0, 0, 9, 11, 0, 1, 2, 5, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (469, 'Utah', 'UT', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (470, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (471, 'Virginia', 'VA', 5, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 1, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (472, 'Washington', 'WA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (473, 'West Virginia', 'WV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (474, 'Wisconson', 'WI', 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (475, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (476, 'Outside USA', 'XX', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (477, 'No State', 'NS', 6, 1, 0, 0, 0, 1, 0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0, 9, 2015);
+INSERT INTO usccr_complaints_issue VALUES (478, 'Alabama', 'AL', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (479, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (480, 'Arizona', 'AZ', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (481, 'Arkansas', 'AR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (482, 'California', 'CA', 11, 0, 0, 0, 0, 0, 1, 0, 0, 5, 4, 0, 0, 0, 1, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (483, 'Colorado', 'CO', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (484, 'Connecticut', 'CT', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (485, 'Delaware', 'DE', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (486, 'Disrict Of Columbia', 'DC', 5, 0, 0, 1, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 1, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (487, 'Florida', 'FL', 14, 0, 0, 0, 1, 0, 0, 0, 0, 4, 5, 0, 1, 0, 1, 0, 1, 1, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (488, 'Georgia', 'GA', 3, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (489, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (490, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (491, 'Illnois', 'IL', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (492, 'Indiana', 'IN', 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (493, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (494, 'Kansas', 'KS', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (495, 'Kentucky', 'KY', 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (496, 'Louisana', 'LA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 1, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (497, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (498, 'Maryland', 'MD', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (499, 'Massachusetts', 'MA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (500, 'Michigan', 'MI', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (501, 'Minnesota', 'MN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (502, 'Mississippi', 'MS', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (503, 'Missouri', 'MO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (504, 'Montana', 'MT', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (505, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (506, 'Nevada', 'NV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (507, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (508, 'New Jersey', 'NJ', 7, 0, 0, 0, 0, 0, 0, 0, 0, 2, 5, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (509, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (510, 'New York', 'NY', 25, 0, 0, 1, 1, 0, 0, 0, 0, 9, 11, 0, 0, 0, 3, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (511, 'North Carolina', 'NC', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (512, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (513, 'Ohio', 'OH', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (514, 'Oklahoma', 'OK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (515, 'Oregon', 'OR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (516, 'Pennsylvania', 'PA', 8, 0, 0, 0, 0, 0, 1, 0, 0, 1, 3, 0, 1, 0, 1, 0, 1, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (517, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (518, 'South Carolina', 'SC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (519, 'South Dakota', 'SD', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (520, 'Tennessee', 'TN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (521, 'Texas', 'TX', 10, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 1, 1, 0, 1, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (522, 'Utah', 'UT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (523, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (524, 'Virginia', 'VA', 6, 1, 0, 1, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 1, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (525, 'Washington', 'WA', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (526, 'West Virginia', 'WV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (527, 'Wisconson', 'WI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (528, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (529, 'Outside USA', 'XX', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (530, 'No State', 'NS', 6, 0, 0, 0, 0, 1, 0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 1, 0, 10, 2015);
+INSERT INTO usccr_complaints_issue VALUES (531, 'Alabama', 'AL', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (532, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (533, 'Arizona', 'AZ', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (534, 'Arkansas', 'AR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (535, 'California', 'CA', 15, 0, 0, 1, 0, 0, 0, 0, 0, 3, 7, 0, 0, 1, 3, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (536, 'Colorado', 'CO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (537, 'Connecticut', 'CT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (538, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (539, 'Disrict Of Columbia', 'DC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (540, 'Florida', 'FL', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (541, 'Georgia', 'GA', 5, 0, 0, 1, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (542, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (543, 'Idaho', 'ID', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (544, 'Illnois', 'IL', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 1, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (545, 'Indiana', 'IN', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (546, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (547, 'Kansas', 'KS', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (548, 'Kentucky', 'KY', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (549, 'Louisana', 'LA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (550, 'Maine', 'ME', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (551, 'Maryland', 'MD', 3, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (552, 'Massachusetts', 'MA', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (553, 'Michigan', 'MI', 7, 0, 0, 0, 0, 0, 1, 0, 0, 1, 4, 0, 1, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (554, 'Minnesota', 'MN', 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (555, 'Mississippi', 'MS', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (556, 'Missouri', 'MO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (557, 'Montana', 'MT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (558, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (559, 'Nevada', 'NV', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (560, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (561, 'New Jersey', 'NJ', 6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (562, 'New Mexico', 'NM', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (563, 'New York', 'NY', 27, 0, 0, 1, 0, 0, 0, 0, 0, 4, 10, 2, 3, 1, 3, 0, 3, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (564, 'North Carolina', 'NC', 6, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0, 1, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (565, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (566, 'Ohio', 'OH', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (567, 'Oklahoma', 'OK', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (568, 'Oregon', 'OR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (569, 'Pennsylvania', 'PA', 7, 0, 0, 0, 1, 0, 1, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (570, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (571, 'South Carolina', 'SC', 5, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (572, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (573, 'Tennessee', 'TN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (574, 'Texas', 'TX', 15, 0, 0, 0, 1, 0, 0, 0, 0, 3, 7, 0, 1, 1, 2, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (575, 'Utah', 'UT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (576, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (577, 'Virginia', 'VA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (578, 'Washington', 'WA', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (579, 'West Virginia', 'WV', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (580, 'Wisconson', 'WI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (581, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (582, 'Outside USA', 'XX', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (583, 'No State', 'NS', 8, 0, 0, 0, 0, 0, 0, 0, 0, 2, 5, 0, 0, 1, 0, 0, 0, 0, 11, 2015);
+INSERT INTO usccr_complaints_issue VALUES (584, 'Alabama', 'AL', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (585, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (586, 'Arizona', 'AZ', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (587, 'Arkansas', 'AR', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (588, 'California', 'CA', 12, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 0, 0, 0, 2, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (589, 'Colorado', 'CO', 3, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (590, 'Connecticut', 'CT', 3, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (591, 'Delaware', 'DE', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (592, 'Disrict Of Columbia', 'DC', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (593, 'Florida', 'FL', 8, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 2, 0, 1, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (594, 'Georgia', 'GA', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (595, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (596, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (597, 'Illnois', 'IL', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (598, 'Indiana', 'IN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (599, 'Iowa', 'IA', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (600, 'Kansas', 'KS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (601, 'Kentucky', 'KY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (602, 'Louisana', 'LA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (603, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (604, 'Maryland', 'MD', 3, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (605, 'Massachusetts', 'MA', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (606, 'Michigan', 'MI', 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (607, 'Minnesota', 'MN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (608, 'Mississippi', 'MS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (609, 'Missouri', 'MO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (610, 'Montana', 'MT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (611, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (612, 'Nevada', 'NV', 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (613, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (614, 'New Jersey', 'NJ', 6, 0, 0, 0, 1, 0, 1, 0, 0, 2, 0, 0, 1, 1, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (615, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (616, 'New York', 'NY', 21, 0, 0, 0, 0, 0, 0, 0, 0, 5, 9, 1, 2, 0, 4, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (617, 'North Carolina', 'NC', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (618, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (619, 'Ohio', 'OH', 4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (620, 'Oklahoma', 'OK', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (621, 'Oregon', 'OR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (622, 'Pennsylvania', 'PA', 7, 0, 0, 0, 1, 0, 1, 0, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (623, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (624, 'South Carolina', 'SC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (625, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (626, 'Tennessee', 'TN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (627, 'Texas', 'TX', 13, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7, 0, 0, 0, 5, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (628, 'Utah', 'UT', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (629, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (630, 'Virginia', 'VA', 4, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (631, 'Washington', 'WA', 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (632, 'West Virginia', 'WV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (633, 'Wisconson', 'WI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (634, 'Wyoming', 'WY', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (635, 'Outside USA', 'XX', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (636, 'No State', 'NS', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 12, 2015);
+INSERT INTO usccr_complaints_issue VALUES (637, 'Alabama', 'AL', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (638, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (639, 'Arizona', 'AZ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (640, 'Arkansas', 'AR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (641, 'California', 'CA', 15, 0, 0, 1, 0, 0, 0, 0, 0, 1, 6, 1, 1, 0, 3, 1, 1, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (642, 'Colorado', 'CO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (643, 'Connecticut', 'CT', 5, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (644, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (645, 'Disrict Of Columbia', 'DC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (646, 'Florida', 'FL', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (647, 'Georgia', 'GA', 4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 1, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (648, 'Hawaii', 'HI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (649, 'Idaho', 'ID', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (650, 'Illnois', 'IL', 5, 1, 0, 1, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (651, 'Indiana', 'IN', 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (652, 'Iowa', 'IA', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (653, 'Kansas', 'KS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (654, 'Kentucky', 'KY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (655, 'Louisana', 'LA', 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (656, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (657, 'Maryland', 'MD', 4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (658, 'Massachusetts', 'MA', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (659, 'Michigan', 'MI', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (660, 'Minnesota', 'MN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (661, 'Mississippi', 'MS', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (662, 'Missouri', 'MO', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (663, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (664, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (665, 'Nevada', 'NV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (666, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (667, 'New Jersey', 'NJ', 5, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (668, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (669, 'New York', 'NY', 10, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 1, 0, 0, 2, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (670, 'North Carolina', 'NC', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (671, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (672, 'Ohio', 'OH', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (673, 'Oklahoma', 'OK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (674, 'Oregon', 'OR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (675, 'Pennsylvania', 'PA', 10, 0, 0, 0, 0, 0, 1, 0, 0, 3, 5, 0, 0, 0, 0, 0, 1, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (676, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (677, 'South Carolina', 'SC', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (678, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (679, 'Tennessee', 'TN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (680, 'Texas', 'TX', 6, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 1, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (681, 'Utah', 'UT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (682, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (683, 'Virginia', 'VA', 4, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (684, 'Washington', 'WA', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (685, 'West Virginia', 'WV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (686, 'Wisconson', 'WI', 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (687, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (688, 'Outside USA', 'xx', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (689, 'No State', 'NS', 5, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 2016);
+INSERT INTO usccr_complaints_issue VALUES (690, 'Alabama', 'AL', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (691, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (692, 'Arizona', 'AZ', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (693, 'Arkansas', 'AR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (694, 'California', 'CA', 16, 0, 0, 0, 1, 0, 0, 0, 0, 5, 6, 0, 1, 2, 0, 1, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (695, 'Colorado', 'CO', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 1, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (696, 'Connecticut', 'CT', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (697, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (698, 'Disrict Of Columbia', 'DC', 3, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (699, 'Florida', 'FL', 5, 0, 0, 0, 1, 0, 1, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (700, 'Georgia', 'GA', 7, 1, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0, 0, 1, 0, 0, 0, 1, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (701, 'Hawaii', 'HI', 2, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (702, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (703, 'Illnois', 'IL', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (704, 'Indiana', 'IN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (705, 'Iowa', 'IA', 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (706, 'Kansas', 'KS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (707, 'Kentucky', 'KY', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (708, 'Louisana', 'LA', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (709, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (710, 'Maryland', 'MD', 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (711, 'Massachusetts', 'MA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (712, 'Michigan', 'MI', 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (713, 'Minnesota', 'MN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (714, 'Mississippi', 'MS', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (715, 'Missouri', 'MO', 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (716, 'Montana', 'MT', 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (717, 'Nebraska', 'NE', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (718, 'Nevada', 'NV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (719, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (720, 'New Jersey', 'NJ', 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (721, 'New Mexico', 'NM', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (722, 'New York', 'NY', 20, 1, 6, 0, 0, 0, 0, 0, 0, 0, 12, 0, 1, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (723, 'North Carolina', 'NC', 5, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 2, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (724, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (725, 'Ohio', 'OH', 3, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (726, 'Oklahoma', 'OK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (727, 'Oregon', 'OR', 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (728, 'Pennsylvania', 'PA', 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (729, 'Rhode Island ', 'RI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (730, 'South Carolina', 'SC', 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (731, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (732, 'Tennessee', 'TN', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (733, 'Texas', 'TX', 6, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 2, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (734, 'Utah', 'UT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (735, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (736, 'Virginia', 'VA', 4, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (737, 'Washington', 'WA', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (738, 'West Virginia', 'WV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (739, 'Wisconson', 'WI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (740, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (741, 'Outside USA', 'XX', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (742, 'No State', 'NS', 7, 0, 1, 1, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 2, 0, 2, 2016);
+INSERT INTO usccr_complaints_issue VALUES (743, 'Alabama', 'AL', 5, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 2, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (744, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (745, 'Arizona', 'AZ', 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (746, 'Arkansas', 'AR', 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (747, 'California', 'CA', 9, 0, 0, 0, 1, 0, 0, 0, 0, 3, 3, 0, 0, 0, 2, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (748, 'Colorado', 'CO', 3, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (749, 'Connecticut', 'CT', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (750, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (751, 'Disrict Of Columbia', 'DC', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (752, 'Florida', 'FL', 6, 0, 0, 0, 0, 0, 1, 0, 0, 1, 2, 0, 0, 0, 2, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (753, 'Georgia', 'GA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (754, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (755, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (756, 'Illnois', 'IL', 4, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (757, 'Indiana', 'IN', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (758, 'Iowa', 'IA', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (759, 'Kansas', 'KS', 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (760, 'Kentucky', 'KY', 2, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (761, 'Louisana', 'LA', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (762, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (763, 'Maryland', 'MD', 2, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (764, 'Massachusetts', 'MA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (765, 'Michigan', 'MI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (766, 'Minnesota', 'MN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (767, 'Mississippi', 'MS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (768, 'Missouri', 'MO', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (769, 'Montana', 'MT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (770, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (771, 'Nevada', 'NV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (772, 'New Hampshire', 'NH', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (773, 'New Jersey', 'NJ', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (774, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (775, 'New York', 'NY', 19, 1, 0, 0, 0, 0, 0, 0, 0, 2, 10, 1, 0, 1, 4, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (776, 'North Carolina', 'NC', 4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (777, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (778, 'Ohio', 'OH', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (779, 'Oklahoma', 'OK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (780, 'Oregon', 'OR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (781, 'Pennsylvania', 'PA', 5, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 2, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (782, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (783, 'South Carolina', 'SC', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (784, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (785, 'Tennessee', 'TN', 5, 0, 0, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 1, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (786, 'Texas', 'TX', 13, 1, 0, 0, 0, 0, 1, 0, 0, 3, 1, 0, 0, 0, 7, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (787, 'Utah', 'UT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (788, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (789, 'Virginia', 'VA', 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (790, 'Washington', 'WA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (791, 'West Virginia', 'WV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (792, 'Wisconson', 'WI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (793, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (794, 'Outside USA', 'XX', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (795, 'No State', 'NS', 4, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 0, 3, 2016);
+INSERT INTO usccr_complaints_issue VALUES (796, 'Alabama', 'AL', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (797, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (798, 'Arizona', 'AZ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (799, 'Arkansas', 'AR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (800, 'California', 'CA', 14, 1, 2, 0, 2, 0, 0, 0, 0, 2, 3, 1, 2, 0, 1, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (801, 'Colorado', 'CO', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (802, 'Connecticut', 'CT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (803, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (804, 'Disrict Of Columbia', 'DC', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (805, 'Florida', 'FL', 5, 1, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (806, 'Georgia', 'GA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (807, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (808, 'Idaho', 'ID', 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (809, 'Illnois', 'IL', 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (810, 'Indiana', 'IN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (811, 'Iowa', 'IA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (812, 'Kansas', 'KS', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (813, 'Kentucky', 'KY', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (814, 'Louisana', 'LA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (815, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (816, 'Maryland', 'MD', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (817, 'Massachusetts', 'MA', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (818, 'Michigan', 'MI', 3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (819, 'Minnesota', 'MN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (820, 'Mississippi', 'MS', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (821, 'Missouri', 'MO', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (822, 'Montana', 'MT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (823, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (824, 'Nevada', 'NV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (825, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (826, 'New Jersey', 'NJ', 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (827, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (828, 'New York', 'NY', 18, 0, 0, 0, 1, 0, 0, 0, 0, 3, 13, 0, 0, 0, 1, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (829, 'North Carolina', 'NC', 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (830, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (831, 'Ohio', 'OH', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (832, 'Oklahoma', 'OK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (833, 'Oregon', 'OR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (834, 'Pennsylvania', 'PA', 6, 1, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (835, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (836, 'South Carolina', 'SC', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (837, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (838, 'Tennessee', 'TN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (839, 'Texas', 'TX', 8, 0, 0, 0, 0, 0, 0, 0, 0, 4, 3, 0, 0, 0, 1, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (840, 'Utah', 'UT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (841, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (842, 'Virginia', 'VA', 4, 0, 0, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (843, 'Washington', 'WA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (844, 'West Virginia', 'WV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (845, 'Wisconson', 'WI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (846, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (847, 'Outside USA', 'XX', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (848, 'No State', 'NS', 7, 1, 1, 1, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 4, 2016);
+INSERT INTO usccr_complaints_issue VALUES (902, 'Alabama', 'AL', 2, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (903, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (904, 'Arizona', 'AZ', 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (905, 'Arkansas', 'AR', 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 1, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (906, 'California', 'CA', 18, 2, 0, 1, 1, 0, 0, 0, 0, 7, 5, 1, 0, 0, 0, 0, 1, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (907, 'Colorado', 'CO', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (908, 'Connecticut', 'CT', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (909, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (910, 'Disrict Of Columbia', 'DC', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (911, 'Florida', 'FL', 11, 1, 0, 1, 2, 0, 0, 0, 0, 5, 2, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (912, 'Georgia', 'GA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (913, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (914, 'Idaho', 'ID', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (915, 'Illnois', 'IL', 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (916, 'Indiana', 'IN', 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (917, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (918, 'Kansas', 'KS', 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (919, 'Kentucky', 'KY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (920, 'Louisana', 'LA', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (921, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (922, 'Maryland', 'MD', 4, 0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (923, 'Massachusetts', 'MA', 2, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (924, 'Michigan', 'MI', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (925, 'Minnesota', 'MN', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (926, 'Mississippi', 'MS', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (927, 'Missouri', 'MO', 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (928, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (929, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (930, 'Nevada', 'NV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (931, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (932, 'New Jersey', 'NJ', 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (933, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (934, 'New York', 'NY', 21, 1, 0, 0, 0, 0, 0, 1, 0, 2, 12, 1, 2, 0, 2, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (935, 'North Carolina', 'NC', 4, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (936, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (937, 'Ohio', 'OH', 3, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (938, 'Oklahoma', 'OK', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (939, 'Oregon', 'OR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (940, 'Pennsylvania', 'PA', 11, 2, 0, 0, 0, 0, 1, 0, 0, 6, 1, 0, 0, 0, 0, 0, 1, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (941, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (942, 'South Carolina', 'SC', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (943, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (944, 'Tennessee', 'TN', 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (945, 'Texas', 'TX', 13, 3, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 2, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (946, 'Utah', 'UT', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (947, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (948, 'Virginia', 'VA', 5, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 1, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (949, 'Washington', 'WA', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (950, 'West Virginia', 'WV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (951, 'Wisconson', 'WI', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (952, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (953, 'Outside USA', 'XX', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (954, 'No State', 'NS', 12, 1, 1, 1, 1, 0, 1, 0, 0, 6, 0, 0, 0, 0, 1, 0, 0, 0, 5, 2016);
+INSERT INTO usccr_complaints_issue VALUES (955, 'Alabama', 'AL', 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (956, 'Alaska', 'AK', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (957, 'Arizona', 'AZ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (958, 'Arkansas', 'AR', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (959, 'California', 'CA', 7, 1, 0, 0, 1, 0, 1, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (960, 'Colorado', 'CO', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (961, 'Connecticut', 'CT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (962, 'Delaware', 'DE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (963, 'Disrict Of Columbia', 'DC', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (964, 'Florida', 'FL', 5, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (965, 'Georgia', 'GA', 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (966, 'Hawaii', 'HI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (967, 'Idaho', 'ID', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (968, 'Illnois', 'IL', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (969, 'Indiana', 'IN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (970, 'Iowa', 'IA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (971, 'Kansas', 'KS', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (972, 'Kentucky', 'KY', 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (973, 'Louisana', 'LA', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (974, 'Maine', 'ME', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (975, 'Maryland', 'MD', 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (976, 'Massachusetts', 'MA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (977, 'Michigan', 'MI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (978, 'Minnesota', 'MN', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (979, 'Mississippi', 'MS', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (980, 'Missouri', 'MO', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (981, 'Montana', 'MT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (982, 'Nebraska', 'NE', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (983, 'Nevada', 'NV', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (984, 'New Hampshire', 'NH', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (985, 'New Jersey', 'NJ', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (986, 'New Mexico', 'NM', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (987, 'New York', 'NY', 20, 0, 0, 0, 1, 0, 0, 0, 0, 0, 18, 1, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (988, 'North Carolina', 'NC', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (989, 'North Dakota', 'ND', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (990, 'Ohio', 'OH', 4, 1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (991, 'Oklahoma', 'OK', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (992, 'Oregon', 'OR', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (993, 'Pennsylvania', 'PA', 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (994, 'Rhode Island ', 'RI', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (995, 'South Carolina', 'SC', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (996, 'South Dakota', 'SD', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (997, 'Tennessee', 'TN', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (998, 'Texas', 'TX', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (999, 'Utah', 'UT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (1000, 'Vermont', 'VT', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (1001, 'Virginia', 'VA', 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (1002, 'Washington', 'WA', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (1003, 'West Virginia', 'WV', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (1004, 'Wisconson', 'WI', 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (1005, 'Wyoming', 'WY', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (1006, 'Outside USA', 'XX', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+INSERT INTO usccr_complaints_issue VALUES (1007, 'No State', 'NS', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 6, 2016);
+
+
+--
+-- TOC entry 3247 (class 2606 OID 117897)
+-- Dependencies: 245 245
+-- Name: pk_usccr_complaints_issues; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY usccr_complaints_issue
+    ADD CONSTRAINT pk_usccr_complaints_issues PRIMARY KEY (id);
+
+
+-- Completed on 2017-02-06 07:38:58
+
+--
+-- PostgreSQL database dump complete
+--
+

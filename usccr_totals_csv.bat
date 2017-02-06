@@ -1,0 +1,1 @@
+ogr2ogr -f "CSV" usccr_table_source_%2_%1.csv PG:"host=localhost user=username dbname=db password=password" -sql "SELECT state,total,ytd FROM vw_geojson_usccr_basis WHERE month = %1 and year = %2"
